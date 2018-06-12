@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+	<head>
+       <meta charset="utf-8" content="ThinksynQ Form" description="Basic form">
+       <title>ThinksynQ Registration</title>
+   
+
+<style>
+div #format {
+        border-bottom: 5px solid blue;
+         
+}
+.content {
+    max-width: 800px;
+    clear: both;
+    margin: auto;
+
+}
+input[type=submit] {
+    width: 20%;
+    background-color: rgb(10,10,190);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input[type=reset] {
+    width: 20%;
+    color: purple;
+    padding: 10px 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+input[type=text] {
+    width: 43%;
+    color: black;
+    padding: 10px 10px 10px 10px;
+    margin: 10px 0;
+    border: none;
+    height: 
+}
+input[type=password]{
+	width: 43%;
+	height: 16px;
+	color:black;
+	padding: 10px 10px;
+	margin: 7px 0;
+	border:none;
+	border-radius: 2px; 
+}
+input[type=list]{
+	width: 43%;
+	height: 15px;
+	color:black;
+	padding: 10px 10px;
+	margin: 8px 0;
+	border:none;
+	border-radius: 3px; 
+}
+input[type=email]{
+	width: 43%;
+	height: 16px;
+	color:black;
+	padding: 10px 10px;
+	margin: 7px 0;
+	border:none;
+	border-radius: 2px; 
+}
+
+input[type=tel]{
+  width: 43%;
+  height: 12px;
+  color:black;
+  padding: 10px 10px;
+  margin: 7px 0;
+  border:none;
+  border-radius: 2px; 
+}
+
+body
+{
+background-color: rgba(100,150,45);
+}
+h1
+{
+text-align: center;
+color: rgb(170,10,60); 
+text-shadow: 2px 2px 8px;
+}
+p.line{
+	border-style: ridge;
+border-width: 2px;
+border-color: rgb(180,180,180);
+}
+h2
+{
+text-align: left;
+color: rgb(160,10,20); 
+text-shadow: 2px 2px 8px;
+}
+h3{
+color: pink;
+text-shadow: 2px 2px 8px;	
+}
+
+</style>
+<script>
+	function validateForm() {
+    var x = document.forms["myForm"]["NAME"].value;
+    var y = document.forms["myForm"]["pass"].value;
+    var z = document.forms["myForm"]["conpass"].value;
+    var w = document.forms["myForm"]["email"].value;
+    var a = document.forms["myForm"]["quantity"].value;
+    var f = document.forms["myForm"]["address"].value;
+    var o = document.forms["myForm"]["City"].value;
+    var s = document.forms["myForm"]["gender"].value;
+   // var r=/^[A-Za-z0-9]+$/;
+    //var r=/[^0-9]/;  
+    //ar q=/^[a-zA-Z\s]+$/;
+    //var w=/[^0-9|^a-z|^A-Z]/;
+    var i=0;
+    var j=x.length;
+    var eval=1;
+    if (x == "") {
+        document.getElementById('userid').innerHTML="<span style='color: red;'>**Name must be filled out";
+        eval=0;
+    }
+    else {
+      for( ;i<j;i++)
+      {
+        if((x.charAt(x[i])>="A"&&x.charAt(x[i])<="Z")||(x.charAt(x[i])>="a"&&x.charAt(x[i])<="z"))
+        {
+          continue;
+        }
+        else
+        {
+        document.getElementById('userid').innerHTML="<span style='color: red;'>**Name must contain alphabets only";
+           eval=0;}
+    
+    }
+
+        document.getElementById('userid').innerHTML="";
+
+    }
+          
+
+    if(y==""||z=="")
+    {
+    	document.getElementById('passw').innerHTML="<span style='color: red;'>**Password must be filled out";
+    	eval=0;
+    }
+    else
+    {
+      document.getElementById('passw').innerHTML="";
+
+      if(y!=z)
+   {
+    document.getElementById('cpassw').innerHTML="<span style='color: red;'>**Password not matching";
+      eval=0;
+   }
+   else
+    {
+      document.getElementById('cpassw').innerHTML="";
+    }
+  
+   var i=0;
+   var j=y.length;
+   for( ;i<j;i++)
+    {
+        if((y.charAt(x[i])>="A"&&y.charAt(x[i])<="Z")||(y.charAt(x[i])>="a"&&y.charAt(x[i])<="z")||(y.charAt(x[i])>="0"&&y.charAt(x[i])<="9"))
+        {
+          continue;
+        }
+        else
+        {
+        document.getElementById('passw').innerHTML="<span style='color: red;'>**password must contain alphanumeric characters filled out";
+           eval=0;}
+    }
+         if(eval==1) 
+         document.getElementById('passw').innerHTML="";
+     }
+  // if(!(y.value.match(w)))
+//{
+//alert('your password can have only alphanumeric characters');
+//return false;
+//}
+if(w=="")
+{
+  document.getElementById('em').innerHTML="<span style='color: red;'>**email must be filled out";
+  eval=0;
+}
+else{
+     document.getElementById('em').innerHTML="";
+    }
+if(a=="")
+   {
+    document.getElementById('pho').innerHTML="<span style='color: red;'>**phone no. must be filled out";
+    eval=0;
+   }
+   else{
+        
+   
+var i=0;
+   var j=a.length;
+   for( ;i<j;i++)
+    {
+        if((a.charAt(x[i])>="0"&&a.charAt(x[i])<="9"))
+        {
+          continue;
+        }
+        else
+        {
+        document.getElementById('pho').innerHTML="<span style='color: red;'>**phone number must contain only numbers";
+        eval=0;}
+    }
+       if(eval==1)
+      document.getElementById('pho').innerHTML="";      
+     }
+    if(f=="")
+   {
+    document.getElementById('add').innerHTML="<span style='color: red;'>**Address must be filled out";
+    eval=0;
+   }
+   else{
+         document.getElementById('add').innerHTML="";
+   }
+   if(o=="")
+   {
+    document.getElementById('tow').innerHTML="<span style='color: red;'>**Choose a city";
+     eval=0;
+   }
+   else
+   {
+    document.getElementById('tow').innerHTML="";
+   }
+  //if(!(a.value.match(r)))
+//{
+//alert('Your telephone number can have numbers alone');
+//return false;
+//}   
+   if(s=="")
+    {
+    document.getElementById('gen').innerHTML="<span style='color: red;'>**Choose a gender";
+    eval=0;
+   }
+   else
+   {
+    document.getElementById('gen').innerHTML="";
+   }
+       if(eval==0)
+       {
+         return false;
+       }   
+       else{
+   	alert("details accepted");
+   	return true;
+   }
+ }
+	</script>
+</head>
+       <body id="p">
+            <div align="center">
+            <div class="content">
+              <div id="format">
+          	<a href="https://thinksynq.in/">
+                  <img src="logo-thinksynq-1.png" align="left">
+                  <img src="logo-thinksynq-1.png" align="right">
+            </a>
+ <h1>ThinksynQ Registration </h1>
+ <h2>The best place to learn and advance forward</h2>
+</div>
+<!--<p id="line"></p>-->
+<form name="myForm"  method="post"  id="abc"  action="details.php"  autocomplete="off" >
+   <table style="margin: 0px auto;">
+    <col width="200">
+    <col width="50">
+    <col width="600">
+    <col width="250">
+    <tr>
+	   <td><label for="name" id="usrid" style="font-size: 25px "  ><strong>Your Name</strong></label></td>
+    <td><strong>:</strong></td>
+    <td><input type="text" name="NAME" required placeholder="Your Name"><span id="userid"></span></td>
+    </tr>
+    <tr>
+     <td><label for="pass" style="font-size: 25px"><strong>Password<br></strong></label></td>
+     <td><strong>:</strong></td>
+     <td><input type="password" name="pass"  required placeholder="Password"><span id="passw"></span></td>
+    </tr>
+    <tr>
+    <td><label for="conpass" style="font-size: 25px"><strong>Confirm Password<br></strong></label></td>
+    <td><strong>:</strong></td>
+    <td><input type="password" name="conpass" required placeholder="Confirm Password"><span id="cpassw"></span></td>
+    </tr>
+    <tr>
+    <td><label for="email" style="font-size: 25px"><strong>Email<br></strong></label></td>
+    <td><strong>:</strong></td> 
+     <td> <input type="email" name="email" required placeholder="Write your mail id"><span id="em"></span></td>    
+    </tr>
+     <tr>
+     <td><label for="sex" style="font-size: 25px"><strong>Phone number<br></strong></label></td>
+     <td><strong>:</strong></td>
+     <td><input type="tel" style="height: 20px "  name="quantity"  maxlength=10 placeholder="Write your phone number" required><span id="pho"></span></td>
+   </tr>
+     <tr>
+     <td><label for="address" style="font-size: 30px" ><strong>Address<br></strong>(optional)</label></td>
+<!--<input type="address" name="address" height="20px" width="30px" required="" >-->
+     <td><strong>:</strong></td>
+      <td> <textarea name="address" rows="8" cols="33" required placeholder="address" >
+      </textarea><span id="add"></span></td>
+      <tr>
+     <tr>
+      <td><label for="city" style=" text-color:rgb(128,0,0);"><strong style="font-size: 25px">City<br></strong> </label></td>
+      <td><strong>:</strong></td>
+      <td><input  type="list" list="City" name="City" required placeholder="city" style="width: 43%">
+<datalist id="City" >
+    <option value="Chennai"></option>
+    <option value="Tiruchirapalli"></option>
+    <option value="Coimbatore"></option>
+    <option value="Madurai"></option>
+    <option value="Salem"></option>
+    <option value="Dindigul"></option>
+    <option value="Tanjore"></option>
+    <option value="Mayiladuthurai"></option>
+    <option value="Erode"></option>
+    <option value="Kumbakkonam"></option>
+    <option value="Villupuram"></option>
+    <option value="Tenkasi"></option>
+    <option value="Tirunelveli"></option>
+    <option value="Thoothukoodi"></option>
+    <option value="Vellore"></option>
+    <option value="Cuddalore"></option>
+    <option value="Pondicherry"></option>
+    <option value="Pollachi"></option>
+    <option value="Chidambaram"></option>
+    <option value="Sirkazhi"></option>
+    <option value="Kanyakumari"></option>
+    <option value="Nagercoil"></option>
+    <option value="Nagapattinam"></option>
+    <option value="Kaaraikkal"></option>
+    <option value="Mannargudi"></option>
+    <option value="other"></option>	
+  </datalist><span id="tow"></span></td></tr>
+  <tr>
+  <td><label for="sex" style="font-size: 25px"><strong>Sex<br></strong></label></td>
+  <td><strong>:</strong></td>
+  <td><input type="radio" name="gender" value="male" ><strong style="font-size: 18px">Male</strong><br>
+  <input type="radio" name="gender" value="female"><strong style="font-size: 18px">Female</strong><span id="gen"></span></td></tr><br><br>
+  <tr>
+  <td><label for="hobbies" style="font-size: 25px"  style="vertical-align: middle;" ><strong>Hobbies<br></strong>(optional)</label></td>
+  <td><strong>:</strong></td><br>
+  <td><input type="checkbox" name="hobies[]" value="Playing Cricket"><strong style="font-size: 18px">Playing Cricket </strong><br>
+<input type="checkbox" name="hobies[]" value="Reading books"><strong style="font-size: 18px">Reading books</strong><br>
+<input type="checkbox" name="hobies[]" value="Coding" style="vertical-align: middle;"><strong style="font-size: 18px">Coding</strong><br>
+<input type="checkbox" name="hobies[]" value="Watching series and movies"style="vertical-align: middle;"><strong style="font-size: 18px">Watching series and movies</strong>
+<br><input type="text" style="width: 43%;height: 45%" name="others" placeholder="If any other hobby please specify here"><br></td>
+  </tr>
+</table>
+<input type="reset" style="background-color: rgb(180,10,90);width: 20%; color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer; ">
+ <input type="submit"  value="View">
+ 
+ <button type="Submit" form="myForm" value="Submit" onclick="return validateForm()" style="width: 20%;
+    background-color: rgb(10,180,90);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;">Submit</button>
+  
+</form>
+
+	
+	<h3>For further details contact <strong>Mr.NS Kiran Kumar</strong> Assistant Manager Development ThinksynQ at<strong> 9003213292</strong> or mail to support@thinksynq.in</h3>
+	<h4 align="right">ThinksynQ Pvt. Limited</h4>
+</div>
+</div>
+</body>
+</html>
+
